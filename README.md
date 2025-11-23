@@ -22,7 +22,14 @@ To publish the package's views to your application's `resources/views/vendor/jet
 php artisan vendor:publish --tag=jetstream-flux-ui-views
 ```
 
-## Usage
+
+## Global Helper: `initials()`
+
+This package provides a globally available helper function called `initials()`. You can use it in your Blade templates or anywhere in your application to get the uppercase initials of a string:
+
+```blade
+{{ initials('Jane Doe') }} <!-- Outputs: JD -->
+```
 
 After publishing, you can customize the views in your application's `resources/views/vendor/jetstream-flux-ui` directory as needed.
 

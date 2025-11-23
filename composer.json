@@ -6,7 +6,10 @@
     "autoload": {
         "psr-4": {
             "JetstreamFluxUi\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "extra": {
         "laravel": {

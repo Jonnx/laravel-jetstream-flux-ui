@@ -33,7 +33,7 @@
             <flux:dropdown class="hidden lg:block" position="bottom" align="start">
                 <flux:profile
                     :name="auth()->user()->name"
-                    :initials="\Illuminate\Support\Str::initials(auth()->user()->name)"
+                    :initials="initials(auth()->user()->name)"
                     {{-- icon:trailing="chevrons-up-down" --}}
                     data-test="sidebar-menu-button"
                 />
