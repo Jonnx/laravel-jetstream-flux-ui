@@ -126,12 +126,14 @@
             </flux:dropdown>
         </flux:header>
 
-        @if(isset($header))
-            {{ $header }}
-        @endif
+       
 
         <flux:main>
-        {{ $slot }}
+            @if(isset($header))
+                {{ $header }}
+            @endif
+
+            {{ $slot }}
         </flux:main>
 
         @fluxScripts
