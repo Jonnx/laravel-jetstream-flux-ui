@@ -34,7 +34,7 @@
                 <flux:profile
                     :name="auth()->user()->name"
                     :initials="'XX'"
-                    icon:trailing="chevrons-up-down"
+                    {{-- icon:trailing="chevrons-up-down" --}}
                     data-test="sidebar-menu-button"
                 />
 
