@@ -126,6 +126,10 @@
             </flux:dropdown>
         </flux:header>
 
+        @if(isset($header))
+            {{ $header }}
+        @endif
+
         <flux:main>
         {{ $slot }}
         </flux:main>
