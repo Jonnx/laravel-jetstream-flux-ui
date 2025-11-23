@@ -46,7 +46,7 @@
                                     <span
                                         class="flex h-full w-full items-center justify-center rounded-lg bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white"
                                     >
-                                        {{ \Illuminate\Support\Str::initials(auth()->user()->name) }}
+                                        {{ initials(auth()->user()->name) }}
                                     </span>
                                 </span>
 
@@ -84,7 +84,7 @@
 
             <flux:dropdown position="top" align="end">
                 <flux:profile
-                    :initials="\Illuminate\Support\Str::initials(auth()->user()->name)"
+                    :initials="initials(auth()->user()->name)"
                     icon-trailing="chevron-down"
                 />
 
@@ -96,7 +96,7 @@
                                     <span
                                         class="flex h-full w-full items-center justify-center rounded-lg bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white"
                                     >
-                                        {{ \Illuminate\Support\Str::initials(auth()->user()->name) }}
+                                        {{ initials(auth()->user()->name) }}
                                     </span>
                                 </span>
 
