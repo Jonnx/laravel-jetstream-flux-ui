@@ -1,0 +1,27 @@
+{
+    "name": "jonnx/laravel-jetstream-flux-ui",
+    "version": "0.0.1",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "JetstreamFluxUi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JetstreamFluxUi\\JetstreamFluxUiServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Jonas Weigert",
+            "email": "weigert.jonas@gmail.com"
+        }
+    ],
+    "require": {
+        "livewire/flux": "^2.6"
+    }
+}
