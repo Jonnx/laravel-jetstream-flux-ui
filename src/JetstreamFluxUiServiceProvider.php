@@ -13,7 +13,9 @@ class JetstreamFluxUiServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views'),
+            __DIR__.'/../resources/css' => resource_path('css'),
         ], 'jetstream-flux-ui-views');
+
     }
 
     /**
