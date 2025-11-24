@@ -1,4 +1,4 @@
-<flux:dropdown position="top" align="start" offset="3">
+<flux:dropdown position="top" align="start" offset="2">
     <flux:profile
         :initials="initials(auth()->user()->currentTeam->name)"
         :name="auth()->user()->currentTeam->name"
@@ -12,18 +12,14 @@
 
         {{-- USER'S AVAILABLE TEAMS --}}
         <flux:menu.group heading="{{ __('My Teams') }}">
-
             {{-- SWITCHABLE TEAMS --}}
             @foreach (auth()->user()->allTeams() as $userTeam)
             <x-switchable-team :team="$userTeam" />
             @endforeach
-
-
-
         </flux:menu.group>
 
+        {{-- ADD A TEAM --}}
         <flux:menu.group>
-                {{-- ADD A TEAM --}}
             <flux:menu.item :href="route('teams.create')" icon="plus" wire:navigate>{{ __('Create a new Team') }}</flux:menu.item>
         </flux:menu.radio.group>
     </flux:menu>
