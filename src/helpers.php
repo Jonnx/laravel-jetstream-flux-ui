@@ -12,6 +12,6 @@ if (!function_exists('initials')) {
         // Split the string by whitespace, filter out empty values
         $words = preg_split('/\s+/', trim($string));
         $letters = array_map(fn($word) => mb_strtoupper(mb_substr($word, 0, 1)), $words);
-        return implode('', $letters);
+        return substr(implode('', $letters), 0, 2);
     }
 }
