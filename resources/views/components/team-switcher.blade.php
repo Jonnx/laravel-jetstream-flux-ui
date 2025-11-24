@@ -11,10 +11,12 @@
         </flux:menu.group>
 
         {{-- USER'S AVAILABLE TEAMS --}}
-        <flux:menu.group heading="{{ __('My Teams') }}">
+        <flux:menu.group heading="{{ __('Switch Team') }}">
             {{-- SWITCHABLE TEAMS --}}
             @foreach (auth()->user()->allTeams() as $userTeam)
+            @if($userTeam->id !== auth()->user()->currentTeam->id)
             <x-switchable-team :team="$userTeam" />
+            @endif
             @endforeach
         </flux:menu.group>
 
