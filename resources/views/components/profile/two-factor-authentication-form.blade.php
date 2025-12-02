@@ -8,23 +8,30 @@
     </x-slot>
 
     <x-slot name="content">
-        <h3 class="text-base font-medium text-gray-900 dark:text-gray-100">
-            @if ($this->enabled)
-                @if ($showingConfirmation)
-                    {{ __('Finish enabling two factor authentication.') }}
-                @else
-                    {{ __('You have enabled two factor authentication.') }}
-                @endif
+        @if ($this->enabled)
+            @if ($showingConfirmation)
+                <flux:callout variant="warning" icon="exclamation-circle" class="max-w-xl">
+                    <flux:callout.heading>{{ __('Finish enabling two factor authentication.') }}</flux:callout.heading>
+                    <flux:callout.text>
+                        {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
+                    </flux:callout.text>
+                </flux:callout>
             @else
-                {{ __('You have not enabled two factor authentication.') }}
+                <flux:callout variant="success" icon="check-circle" class="max-w-xl">
+                    <flux:callout.heading>{{ __('You have enabled two factor authentication.') }}</flux:callout.heading>
+                    <flux:callout.text>
+                        {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
+                    </flux:callout.text>
+                </flux:callout>
             @endif
-        </h3>
-
-        <div class="mt-3 max-w-xl text-sm text-gray-600 dark:text-gray-400">
-            <p>
-                {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
-            </p>
-        </div>
+        @else
+            <flux:callout variant="warning" icon="exclamation-circle" class="max-w-xl">
+                <flux:callout.heading>{{ __('You have not enabled two factor authentication.') }}</flux:callout.heading>
+                <flux:callout.text>
+                    {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
+                </flux:callout.text>
+            </flux:callout>
+        @endif
 
         @if ($this->enabled)
             @if ($showingQrCode)
@@ -74,7 +81,7 @@
                     </p>
                 </div>
 
-                <div class="grid gap-1 max-w-xl mt-4 px-4 py-4 font-mono text-sm bg-gray-100 dark:bg-gray-900 dark:text-gray-100 rounded-lg">
+                <div class="grid gap-1 max-w-xl mt-4 px-4 py-4 font-mono text-sm bg-gray-100 dark:bg-neutral-900 dark:text-gray-100 rounded-lg">
                     @foreach (json_decode(decrypt($this->user->two_factor_recovery_codes), true) as $code)
                         <div>{{ $code }}</div>
                     @endforeach
@@ -104,7 +111,7 @@
                     </x-confirms-password>
                 @else
                     <x-confirms-password wire:then="showRecoveryCodes">
-                        <flux:button type="button" variant="subtle" class="me-3">
+                        <flux:button type="button" variant="primary" class="me-3">
                             {{ __('Show Recovery Codes') }}
                         </flux:button>
                     </x-confirms-password>
