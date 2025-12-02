@@ -1,3 +1,4 @@
-<flux:button variant="primary" {{ $attributes->merge(['type' => 'submit', 'class' => 'cursor-pointer']) }}>
+@props(['variant' => 'primary'])
+<flux:button variant="{{ $variant }}" {{ $attributes->merge(['type' => 'submit', 'class' => 'cursor-pointer']) }}>
     {{ $slot }}
 </flux:button>
