@@ -110,7 +110,7 @@
         </x-slot>
 
         <x-slot name="content">
-            <flux:label for="plaintextToken" class="mb-1">{{ __('Please copy your new API token. For your security, it won\'t be shown again.') }}</flux:label>
+            <flux:label for="plaintextToken">{{ __('Please copy your new API token. For your security, it won\'t be shown again.') }}</flux:label>
             <flux:input
                 id="plaintextToken"
                 x-ref="plaintextToken"
@@ -122,7 +122,7 @@
                 autocorrect="off"
                 autocapitalize="off"
                 spellcheck="false"
-                class="font-mono"
+                class="w-full mt-2 font-mono"
                 @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)"
             />
         </x-slot>
