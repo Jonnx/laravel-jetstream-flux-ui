@@ -71,10 +71,10 @@
 
                 <!-- API Token List -->
                 <x-slot name="content">
-                    <div class="space-y-6">
+                    <div class="">
                         @foreach ($this->user->tokens->sortBy('name') as $token)
-                            <div class="flex items-center justify-between">
-                                <div class="break-all dark:text-white">
+                            <div class="flex items-center justify-between transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 p-1">
+                                <div class="break-all dark:text-white pl-2">
                                     {{ $token->name }}
                                 </div>
 
@@ -86,14 +86,14 @@
                                     @endif
 
                                     @if (Laravel\Jetstream\Jetstream::hasPermissions())
-                                        <button class="cursor-pointer ms-6 text-sm text-gray-400 underline" wire:click="manageApiTokenPermissions({{ $token->id }})">
+                                        <x-secondary-button class="ms-6" wire:click="manageApiTokenPermissions({{ $token->id }})">
                                             {{ __('Permissions') }}
-                                        </button>
+                                        </x-secondary-button>
                                     @endif
 
-                                    <button class="cursor-pointer ms-6 text-sm text-red-500" wire:click="confirmApiTokenDeletion({{ $token->id }})">
+                                    <x-danger-button class="ms-6" wire:click="confirmApiTokenDeletion({{ $token->id }})">
                                         {{ __('Delete') }}
-                                    </button>
+                                    </x-danger-button>
                                 </div>
                             </div>
                         @endforeach
