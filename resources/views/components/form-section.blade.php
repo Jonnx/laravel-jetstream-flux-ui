@@ -4,7 +4,7 @@
     @if($submit)
         <form wire:submit="{{ $submit }}">
             <flux:card class="p-6 overflow-hidden">
-                <flux:heading>{{ $title }}</flux:heading>
+                <flux:heading size="lg">{{ $title }}</flux:heading>
                 <flux:text class="mt-2 mb-6">{{ $description }}</flux:text>
                 <div class="grid grid-cols-6 gap-6">
                     {{ $form }}
@@ -18,7 +18,7 @@
         </form>
     @else
         <flux:card class="p-6 overflow-hidden">
-            <flux:heading>{{ $title }}</flux:heading>
+            <flux:heading size="lg">{{ $title }}</flux:heading>
             <flux:text class="mt-2 mb-6">{{ $description }}</flux:text>
             <div class="grid grid-cols-6 gap-6">
                 {{ $form }}
