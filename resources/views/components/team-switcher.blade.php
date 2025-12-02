@@ -11,6 +11,7 @@
         </flux:menu.group>
 
         {{-- USER'S AVAILABLE TEAMS --}}
+        @if(auth()->user()->allTeams()->count() > 1)
         <flux:menu.group heading="{{ __('Switch Team') }}">
             {{-- SWITCHABLE TEAMS --}}
             @foreach (auth()->user()->allTeams() as $userTeam)
@@ -19,6 +20,7 @@
             @endif
             @endforeach
         </flux:menu.group>
+        @endif
 
         {{-- ADD A TEAM --}}
         <flux:menu.group>
