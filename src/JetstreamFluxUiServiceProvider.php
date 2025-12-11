@@ -16,6 +16,10 @@ class JetstreamFluxUiServiceProvider extends ServiceProvider
             __DIR__.'/../resources/css' => resource_path('css'),
         ], 'jetstream-flux-ui-views');
 
+        $this->publishes([
+            __DIR__.'/../tailwind.config.js' => base_path('tailwind.config.js'),
+            __DIR__.'/../vite.config.js' => base_path('vite.config.js'),
+        ], 'jetstream-flux-ui-build-config');
     }
 
     /**

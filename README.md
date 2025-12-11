@@ -6,6 +6,24 @@ A Laravel package that provides a service provider to publish a set of pre-defin
 - Publishes a collection of ready-to-use Blade views
 - Simple integration with Laravel's vendor:publish system
 
+## Quick Start
+
+```
+composer require laravel/jetstream
+php artisan jetstream:install livewire --teams --dark
+npm install
+npm run build
+php artisan migrate:fresh
+composer require jonnx/laravel-jetstream-flux-ui
+php artisan vendor:publish --tag=jetstream-flux-ui-views --force
+npm add @tailwindcss/postcss
+php artisan vendor:publish --tag=jetstream-flux-ui-build-config --force
+php artisan flux:activate
+
+
+
+```
+
 ## Installation
 
 1. Require the package in your Laravel project (if published to a repository):
