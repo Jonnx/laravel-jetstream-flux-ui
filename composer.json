@@ -1,6 +1,6 @@
 {
     "name": "jonnx/laravel-jetstream-flux-ui",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "autoload": {
