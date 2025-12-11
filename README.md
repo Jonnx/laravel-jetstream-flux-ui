@@ -9,19 +9,19 @@ A Laravel package that provides a service provider to publish a set of pre-defin
 ## Quick Start
 
 ```
-composer require laravel/jetstream
-php artisan jetstream:install livewire --teams --dark
-npm install
-npm run build
-php artisan migrate:fresh
-composer require jonnx/laravel-jetstream-flux-ui
-php artisan vendor:publish --tag=jetstream-flux-ui-views --force
-php artisan vendor:publish --tag=jetstream-flux-ui-build-config --force
-npm remove tailwindcss
-npm add tailwindcss --include=dev
-npm add @tailwindcss/postcss --include=dev
-php artisan flux:activate
-npm run build
+composer require laravel/jetstream \
+&& php artisan jetstream:install livewire --teams --dark \
+&& npm install \
+&& npm run build \
+&& php artisan migrate:fresh \
+&& composer require jonnx/laravel-jetstream-flux-ui \
+&& php artisan vendor:publish --tag=jetstream-flux-ui-views --force \
+&& php artisan vendor:publish --tag=jetstream-flux-ui-build-config --force \
+&& npm remove tailwindcss \
+&& npm add tailwindcss --include=dev \
+&& npm add @tailwindcss/postcss --include=dev \
+&& php artisan flux:activate \
+&& npm run build
 ```
 
 ## Installation

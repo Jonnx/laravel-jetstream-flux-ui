@@ -25,6 +25,7 @@
         }
     ],
     "require": {
-        "livewire/flux": "^2.6"
+        "livewire/flux": "^2.6",
+        "laravel/jetstream": "^5.4"
     }
 }
