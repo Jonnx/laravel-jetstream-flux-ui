@@ -2,9 +2,15 @@
 
 A Laravel package that provides a service provider to publish a set of pre-defined UI views for rapid prototyping or scaffolding.
 
-## Features
-- Publishes a collection of ready-to-use Blade views
-- Simple integration with Laravel's vendor:publish system
+## Requirements
+This package is built on top of existing Laravel eco system packages. 
+
+- Laravel Livewire
+- Laravel Jetstream (with Livewire Stack)
+- FluxUI Pro (paid license)
+
+## Future Improvements
+- Evaluate possibility to remove the need for paid flux license.
 
 ## Quick Start
 
