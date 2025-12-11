@@ -16,12 +16,12 @@ npm run build
 php artisan migrate:fresh
 composer require jonnx/laravel-jetstream-flux-ui
 php artisan vendor:publish --tag=jetstream-flux-ui-views --force
-npm add @tailwindcss/postcss
 php artisan vendor:publish --tag=jetstream-flux-ui-build-config --force
+npm remove tailwindcss
+npm add tailwindcss --include=dev
+npm add @tailwindcss/postcss --include=dev
 php artisan flux:activate
-
-
-
+npm run build
 ```
 
 ## Installation
