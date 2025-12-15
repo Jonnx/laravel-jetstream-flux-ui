@@ -25,6 +25,6 @@
         {{-- ADD A TEAM --}}
         <flux:menu.group>
             <flux:menu.item :href="route('teams.create')" icon="plus" wire:navigate>{{ __('Create a new Team') }}</flux:menu.item>
-        </flux:menu.radio.group>
+        </flux:menu.group>
     </flux:menu>
 </flux:dropdown>
